@@ -13,10 +13,25 @@ This smart contract implements an Ethereum Bank with features like deposits, wit
 6. **Interaction:** Use different accounts in Remix to test ownership restrictions and user-specific balances.
 
 ## Instructions
+1. To edit and run the files **Use GitHub Codespaces**:
+   - Click on the green **Code** dropdown button in this repository.
+   - Select **Codespaces** tab and choose *"Create codespace on main"* to open your development environment.
+   - After a minute or two, your Codespace will be ready.
 
-1. Implement the contract code by completing the **TODO's** in `code.sol` and commit the changes either in Codespaces or Github Notepad.
-2. Compile and deploy the contract using **Remix IDE**.
-3. **Test Functions:**
+2. In the Codespace IDE, *Go* comes pre-installed. 
+   - **Check the Go version installed**: Run the following command in terminal `go version` to check the version.
+   - **Ensure the same Go version is in `go.mod` file**: Check the `go.mod` file. It should have the same Go version which is pre-installed. 
+     You can update the `go.mod` file if necessary:
+     ```yaml
+     module blockchain-api
+     
+     go 1.23.1
+     ```
+
+
+3. Implement the contract code by completing the **TODO's** in `code.sol` and commit the changes either in Codespaces or Github Notepad.
+4. Compile and deploy the contract using **Remix IDE**.
+5. **Test Functions:**
    * Use the **deposit** function to deposit Ether.
    * Use the **withdraw** function to withdraw Ether.
    * Use the **calculateInterest** function to calculate interest.
