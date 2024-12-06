@@ -36,7 +36,7 @@ This smart contract implements an Ethereum Bank with features like deposits, wit
    * Use the **withdraw** function to withdraw Ether.
    * Use the **calculateInterest** function to calculate interest.
    * Test **owner-specific** functions (set interest rate and withdraw all funds).
-
+6. Once tested, submit your answers by committing the changes in Codespaces. You can commit changes using the terminal or the built-in commit button
 
 ## Testing Steps in Remix IDE
 
