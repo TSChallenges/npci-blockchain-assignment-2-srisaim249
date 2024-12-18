@@ -29,12 +29,12 @@ contract AdvancedBank {
         1) Check that the deposit amount is greater than zero
         2) update the balance for the receiver
         */
-    
-       balances[msg.sender]+=msg.value;
+        require(msg.value>0,"invalid amount received");
+        balances[msg.sender]+=msg.value;
     }
 
     // Function to withdraw Ether from the bank
-    function withdraw(uint256 amount) public onlyOwner() {
+    function withdraw(uint256 amount) public inputvalidation(amount)  {
         /* TODO:
         1) Check if the sender's balance is sufficient for the withdrawl
         2) Deduct the amount from the sender's balance
@@ -54,6 +54,7 @@ contract AdvancedBank {
     function calculateInterest() public view returns (uint256) {
         // TODO: Implement interest calculation: (balance * interestRate / 100)
 
+        require(interestRate>0,"interestRate need to be set");
         uint256 balance=balances[msg.sender];
 
         return (balance * interestRate / 100); // Replace this with the actual calculation
@@ -67,9 +68,10 @@ contract AdvancedBank {
     }
 
     // Function for the owner to withdraw all funds (administrative purpose)
-    function withdrawAll() public onlyOwner {
+    function withdrawAll() public  {
         uint256 contractBalance = address(this).balance; // Get the contract's total balance
         // TODO: Transfer all Ether to the owner
+        balances[owner] -= contractBalance;
         payable(owner).transfer(contractBalance);
     }
 
