@@ -68,7 +68,7 @@ contract AdvancedBank {
     }
 
     // Function for the owner to withdraw all funds (administrative purpose)
-    function withdrawAll() public  {
+    function withdrawAll() public onlyOwner {
         uint256 contractBalance = address(this).balance; // Get the contract's total balance
         // TODO: Transfer all Ether to the owner
         balances[owner] -= contractBalance;
